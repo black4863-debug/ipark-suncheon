@@ -34,6 +34,28 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
   spySections.forEach(section => spyObserver.observe(section));
 
+  // lead popup
+  const popup = document.getElementById("leadPopup");
+  if (popup) {
+    const today = new Date().toISOString().slice(0, 10);
+    let hideUntil = null;
+    try { hideUntil = localStorage.getItem("leadPopupHideDate"); } catch (e) {}
+
+    if (hideUntil !== today) {
+      setTimeout(() => popup.classList.add("show"), 700);
+    }
+
+    const closePopup = () => popup.classList.remove("show");
+    document.getElementById("leadPopupBackdrop").addEventListener("click", closePopup);
+    document.getElementById("leadPopupClose").addEventListener("click", closePopup);
+    document.getElementById("leadPopupCloseText").addEventListener("click", closePopup);
+    document.getElementById("leadPopupCta").addEventListener("click", closePopup);
+    document.getElementById("leadPopupHideToday").addEventListener("click", () => {
+      try { localStorage.setItem("leadPopupHideDate", today); } catch (e) {}
+      closePopup();
+    });
+  }
+
   // reveal on scroll
   const revealEls = document.querySelectorAll(".reveal");
   const io = new IntersectionObserver((entries) => {
