@@ -3,15 +3,13 @@
 const GAS_ENDPOINT_URL = "https://script.google.com/macros/s/AKfycbwhyGfEIlFlrMMRXzAJslWaHzTjW4w0ivfomf8o9BP90aMINRsgyuVUwDeANL6N0tE40g/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const header = document.getElementById("siteHeader");
+  const fixedTop = document.getElementById("fixedTop");
   const topBtn = document.getElementById("topBtn");
-  const navToggle = document.getElementById("navToggle");
-  const mobileNav = document.getElementById("mobileNav");
 
   // scroll effects
   const onScroll = () => {
     const y = window.scrollY;
-    header.classList.toggle("scrolled", y > 60);
+    fixedTop.classList.toggle("scrolled", y > 60);
     topBtn.classList.toggle("show", y > 700);
   };
   window.addEventListener("scroll", onScroll, { passive: true });
@@ -19,17 +17,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   topBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
-  // mobile nav
-  let navOpen = false;
-  navToggle.addEventListener("click", () => {
-    navOpen = !navOpen;
-    mobileNav.style.display = navOpen ? "block" : "none";
-    navToggle.classList.toggle("open", navOpen);
-  });
-  mobileNav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
-    navOpen = false;
-    mobileNav.style.display = "none";
-  }));
+  // quick-nav scrollspy
+  const qnItems = document.querySelectorAll(".qn-item[data-section]");
+  const spySections = [...qnItems]
+    .map(a => document.getElementById(a.dataset.section))
+    .filter(Boolean);
+  const spyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const link = document.querySelector(`.qn-item[data-section="${entry.target.id}"]`);
+      if (!link) return;
+      if (entry.isIntersecting) {
+        qnItems.forEach(a => a.classList.remove("active"));
+        link.classList.add("active");
+      }
+    });
+  }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+  spySections.forEach(section => spyObserver.observe(section));
 
   // reveal on scroll
   const revealEls = document.querySelectorAll(".reveal");

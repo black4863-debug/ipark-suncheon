@@ -9,68 +9,51 @@
 </head>
 <body>
 
-<!-- Header -->
-<header class="site-header" id="siteHeader">
-  <div class="container">
-    <a href="#top" class="logo">IPARK<small>순천 조례동 아이파크</small></a>
-    <nav class="nav-links">
-      <a href="#overview">사업개요</a>
-      <a href="#unit">평형안내</a>
-      <a href="#location">입지환경</a>
-      <a href="#premium">프리미엄</a>
-      <a href="#contact">오시는길</a>
-    </nav>
-    <div class="header-cta">
-      <a href="#lead" class="btn btn-outline">문의하기</a>
-      <a href="#lead" class="btn btn-gold">관심고객 등록</a>
+<!-- Fixed top: header + quick nav -->
+<div class="fixed-top" id="fixedTop">
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <a href="#top" class="logo">IPARK<small>순천 조례동 아이파크</small></a>
+      <div class="header-cta">
+        <a href="tel:15552568" class="btn btn-outline">전화상담</a>
+        <a href="#lead" class="btn btn-accent">관심고객 등록</a>
+      </div>
     </div>
-    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
-  </div>
-</header>
-
-<!-- Mobile nav drawer -->
-<div id="mobileNav" style="position:fixed;inset:0;background:#fff;z-index:190;display:none;padding:110px 32px 40px;">
-  <nav style="display:flex;flex-direction:column;gap:28px;font-size:20px;font-family:'Pretendard',sans-serif;font-weight:700;">
-    <a href="#overview">사업개요</a>
-    <a href="#unit">평형안내</a>
-    <a href="#location">입지환경</a>
-    <a href="#premium">프리미엄</a>
-    <a href="#contact">오시는길</a>
-    <a href="#lead" class="btn btn-red" style="margin-top:12px;">관심고객 등록하기</a>
+  </header>
+  <nav class="quick-nav" id="quickNav">
+    <div class="container quick-nav-inner">
+      <a href="#overview" class="qn-item" data-section="overview">사업개요</a>
+      <a href="#unit" class="qn-item" data-section="unit">평형안내</a>
+      <a href="#location" class="qn-item" data-section="location">입지환경</a>
+      <a href="#premium" class="qn-item" data-section="premium">프리미엄</a>
+      <a href="#contact" class="qn-item" data-section="contact">오시는길</a>
+      <a href="#lead" class="qn-item qn-cta" data-section="lead">관심고객 등록</a>
+    </div>
   </nav>
 </div>
 
 <!-- Hero -->
 <section class="hero" id="top">
   <div class="hero-glow"></div>
-  <svg class="hero-skyline" viewBox="0 0 1440 260" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="60" y="90" width="70" height="170" fill="rgba(255,255,255,0.06)"/>
-    <rect x="150" y="50" width="90" height="210" fill="rgba(255,255,255,0.09)"/>
-    <rect x="260" y="120" width="60" height="140" fill="rgba(255,255,255,0.05)"/>
-    <rect x="340" y="30" width="100" height="230" fill="rgba(201,160,99,0.14)"/>
-    <rect x="460" y="100" width="70" height="160" fill="rgba(255,255,255,0.07)"/>
-    <rect x="550" y="60" width="85" height="200" fill="rgba(255,255,255,0.08)"/>
-    <rect x="660" y="10" width="110" height="250" fill="rgba(201,160,99,0.16)"/>
-    <rect x="790" y="80" width="65" height="180" fill="rgba(255,255,255,0.06)"/>
-    <rect x="880" y="40" width="95" height="220" fill="rgba(255,255,255,0.09)"/>
-    <rect x="1000" y="110" width="60" height="150" fill="rgba(255,255,255,0.05)"/>
-    <rect x="1080" y="20" width="105" height="240" fill="rgba(201,160,99,0.14)"/>
-    <rect x="1210" y="95" width="70" height="165" fill="rgba(255,255,255,0.07)"/>
-    <rect x="1300" y="55" width="90" height="205" fill="rgba(255,255,255,0.08)"/>
-  </svg>
-  <div class="container hero-inner">
-    <div class="hero-badge"><span class="dot"></span>사전 정보 제공 · 관심고객 사전 등록 중</div>
-    <h1 class="reveal in"><em>왕지지구, 순천의 새 기준이 되다</em>순천 조례동<br>아이파크</h1>
-    <p class="hero-desc">전남 순천시 조례동 왕지지구, IPARK현대산업개발이 짓는 지하 4층~지상 22층 11개 동 683세대. 남향 위주 세대 배치와 특화 조경으로 완성되는 프리미엄 주거공간을 가장 먼저 만나보세요.</p>
-    <div class="hero-actions">
-      <a href="#lead" class="btn btn-gold">사전 관심고객 등록</a>
-      <a href="#overview" class="btn btn-outline">사업개요 보기</a>
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <div class="hero-badge"><span class="dot"></span>사전 정보 제공 · 관심고객 사전 등록 중</div>
+      <h1 class="reveal in"><em>왕지지구, 순천의 새 기준이 되다</em>순천 조례동<br>아이파크</h1>
+      <p class="hero-desc">전남 순천시 조례동 왕지지구, IPARK현대산업개발이 짓는 지하 4층~지상 22층 11개 동 683세대. 남향 위주 세대 배치와 특화 조경으로 완성되는 프리미엄 주거공간을 가장 먼저 만나보세요.</p>
+      <div class="hero-actions">
+        <a href="#lead" class="btn btn-accent">사전 관심고객 등록</a>
+        <a href="#overview" class="btn btn-outline">사업개요 보기</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num"><span>683</span>세대</div><div class="label">총 세대수</div></div>
+        <div class="hero-stat"><div class="num">11<span>개 동</span></div><div class="label">지하4층~지상22층</div></div>
+        <div class="hero-stat"><div class="num"><span>2,450</span>억</div><div class="label">총 사업비</div></div>
+        <div class="hero-stat"><div class="num">2029<span>년</span></div><div class="label">준공 목표(하반기)</div></div>
+      </div>
     </div>
-    <div class="hero-stats">
-      <div class="hero-stat"><div class="num"><span>683</span>세대</div><div class="label">총 세대수</div></div>
-      <div class="hero-stat"><div class="num">11<span>개 동</span></div><div class="label">지하4층~지상22층</div></div>
-      <div class="hero-stat"><div class="num"><span>2,450</span>억</div><div class="label">총 사업비</div></div>
-      <div class="hero-stat"><div class="num">2029<span>년</span></div><div class="label">준공 목표(하반기)</div></div>
+    <div class="hero-visual reveal">
+      <img src="assets/rendering-aerial.png" alt="순천 조례동 아이파크 단지 조감도" class="hero-render">
+      <span class="render-caption">단지 조감도 · 실제와 차이가 있을 수 있습니다</span>
     </div>
   </div>
   <div class="scroll-cue"><span>SCROLL</span><div class="line"></div></div>
@@ -298,7 +281,7 @@
           <input type="checkbox" id="fConsent" required>
           <span>[필수] 개인정보 수집·이용에 동의합니다. 수집 항목(이름, 생년월일, 연락처, 거주지역, 희망평형, 매수목적)은 분양 정보 안내 목적으로만 사용되며, 안내 완료 후 파기됩니다. <a href="#" id="privacyLink">자세히 보기</a></span>
         </label>
-        <button type="submit" class="btn btn-red btn-block">관심고객 등록하기</button>
+        <button type="submit" class="btn btn-dark btn-block">관심고객 등록하기</button>
         <div class="form-status" id="formStatus"></div>
         <p class="form-note">등록은 무료이며 계약 의무가 발생하지 않습니다.</p>
       </form>
@@ -358,7 +341,7 @@
 <!-- Sticky mobile CTA -->
 <div class="sticky-cta" id="stickyCta">
   <a href="tel:15552568" class="btn btn-outline" style="border:1px solid var(--line);color:var(--ink);">전화상담</a>
-  <a href="#lead" class="btn btn-red">관심고객 등록</a>
+  <a href="#lead" class="btn btn-dark">관심고객 등록</a>
 </div>
 
 <button class="top-btn" id="topBtn" aria-label="맨 위로">↑</button>
