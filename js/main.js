@@ -1,5 +1,5 @@
 // TODO: Google Apps Script 웹앱 배포 후 아래 URL을 교체하세요.
-// 배포 방법: Google Sheets > 확장 프로그램 > Apps Script > 웹 앱으로 배포 > 액세스 권한 "모든 사용자"
+// 스크립트 원본: apps-script/Code.gs (설치 방법 주석 참고)
 const GAS_ENDPOINT_URL = "https://script.google.com/macros/s/REPLACE_WITH_YOUR_DEPLOYMENT_ID/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
