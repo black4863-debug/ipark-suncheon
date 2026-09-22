@@ -1,6 +1,6 @@
 // TODO: Google Apps Script 웹앱 배포 후 아래 URL을 교체하세요.
 // 스크립트 원본: apps-script/Code.gs (설치 방법 주석 참고)
-const GAS_ENDPOINT_URL = "https://script.google.com/macros/s/REPLACE_WITH_YOUR_DEPLOYMENT_ID/exec";
+const GAS_ENDPOINT_URL = "https://script.google.com/macros/s/AKfycbwhyGfEIlFlrMMRXzAJslWaHzTjW4w0ivfomf8o9BP90aMINRsgyuVUwDeANL6N0tE40g/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.getElementById("siteHeader");
